@@ -10,4 +10,9 @@ class AssignedCatagory extends Model
     {
     	return $this->belongsToMany('App\ApprovedProcess')->withTimestamps();
     }
+
+    public function sops()
+    {
+    	return $this->belongsToMany('App\Sop')->withTimestamps();
+    }
 }

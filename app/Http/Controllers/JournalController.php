@@ -79,7 +79,7 @@ class JournalController extends Controller
             $pdfpath=public_path("/journal-docs/files/".$journal->file);
             $journalName=$request->name;
 
-            $imageNames=Helper::foo($pdfpath,$journalName);
+            $imageNames=Helper::foo($pdfpath,$journalName,'/journal-docs/fileimages/');
 
             
         }

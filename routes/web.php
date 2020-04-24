@@ -136,6 +136,9 @@ Route::resource('pcr','PcrController');
 Route::get('/pcr-admin','PcrController@indexAdmin')->name('pcr.indexadmin');
 
 
+/*SOP*/
+
+Route::resource('sop','SopController');
 
 
 

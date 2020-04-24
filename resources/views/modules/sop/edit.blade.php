@@ -8,7 +8,7 @@
 
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Uploading Approved Process</h1>
+        <h1>Edit Approved Process</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -21,7 +21,8 @@
   </section>
 
   <section class="content">
-    <form method="Post" action="{{route('approvedprocess.store')}}" enctype="multipart/form-data" >
+    <form method="Post" action="{{route('approvedprocess.update',$approvedprocess->id)}}" enctype="multipart/form-data" >
+      {{ method_field('PATCH') }}
       @csrf
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
@@ -42,12 +43,18 @@
                   <label>Assigned Group</label>
                   <select class="select2 " multiple="multiple" data-placeholder="Select a Group" name="assigned_catagory_id[]" style="width: 100%;" >
                     
-                   @foreach($assignedcatagories as $assignedcatagory)
+                  @foreach($assignedcatagories as $assignedcatagory)
                    
-                    <option value="{{$assignedcatagory->id}}">{{$assignedcatagory->name}}</option>
+                    @if(in_array($assignedcatagory->id, $approvedprocess->assignedcatagories->pluck('id')->toArray()))
+                      <option value="{{$assignedcatagory->id}}" selected>{{$assignedcatagory->name}}</option>
+                    @else
+                      <option value="{{$assignedcatagory->id}}" >{{$assignedcatagory->name}}</option>
+                    @endif
+
+                      
                     @endforeach
                   </select>
-                 {{-- {{ dd($errors)}} --}}
+                
                   {!! $errors->first('assigned_catagory_id', '<p class="error-message">:message</p>') !!}
                 </div>
               </div>
@@ -61,7 +68,9 @@
                     <option></option>
 
                     @foreach($processcatagories as $processcatagory)
-                    <option value="{{$processcatagory->id}}">{{$processcatagory->name}}</option>
+                    <option value="{{$processcatagory->id}}" 
+                    {{$approvedprocess->process_catagory_id==$processcatagory->id? 'selected':'' }}>
+                    {{$processcatagory->name}}</option>
                     @endforeach
                   
                    
@@ -82,7 +91,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                   </div>
-                  <input type="date"  class="form-control " name="circulation_date" value="{{old('circulation_date')}}" > 
+                  <input type="date"  class="form-control " name="circulation_date" value="{{$approvedprocess->circulation_date}}" > 
                 </div> 
                 {!! $errors->first('circulation_date', '<p class="error-message">:message</p>') !!}
               </div>
@@ -94,7 +103,7 @@
             <div class="col-md-5" >
               <div class="form-group">
                 <label>Approved Process Version</label>
-                <input class="form-control " name="version" style="width: 100%;" value="{{old('version')}}" >
+                <input class="form-control " name="version" style="width: 100%;" value="{{$approvedprocess->version}}" >
                 {!! $errors->first('version', '<p class="error-message">:message</p>') !!}
               </div>
             </div>
@@ -105,7 +114,7 @@
             <div class="col-md-11" >
               <div class=" form-group">  
                 <label>Approved Process Name</label>
-                <input class="form-control " name="name" style="width: 100%;" value="{{old('name')}}" >
+                <input class="form-control " name="name" style="width: 100%;" value="{{$approvedprocess->name}}" >
                 {!! $errors->first('name', '<p class="error-message">:message</p>') !!}
 
               </div>
@@ -120,9 +129,9 @@
               </div>
               <div class="col-md-8 form-group" >
                <div class="custom-file">
-                <input type="file" class="custom-file-input " id="inputGroupFile01" name="approved_file" accept=".doc,.pdf,.docx">
+                <input type="file" class="custom-file-input " id="inputGroupFile01" name="approved_file" accept=".doc,.pdf,.docx" value="{{$approvedprocess->approved_file}}">
                 
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                <label class="custom-file-label" for="inputGroupFile01">C{{$approvedprocess->approved_file}}</label>
                 {!! $errors->first('approved_file', '<p class="error-message">:message</p>') !!}
               </div>
             </div>
@@ -133,9 +142,9 @@
             </div>
             <div class="col-md-8 form-group" >
              <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01" name="signed_file" accept=".doc,.pdf,.docx">
+              <input type="file" class="custom-file-input" id="inputGroupFile01" name="signed_file" accept=".doc,.pdf,.docx" value="{{$approvedprocess->signed_file}}">
               
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <label class="custom-file-label" for="inputGroupFile01">{{$approvedprocess->signed_file}}</label>
               {!! $errors->first('signed_file', '<p class="error-message">:message</p>') !!}
             </div>
           </div>
@@ -146,9 +155,9 @@
           </div>
           <div class="col-md-8 form-group" >
            <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01" name="working_file" accept=".doc,.pdf,.docx"  > 
+            <input type="file" class="custom-file-input" id="inputGroupFile01" name="working_file" accept=".doc,.pdf,.docx" value="{{$approvedprocess->working_file}}"> 
            
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            <label class="custom-file-label" for="inputGroupFile01">{{$approvedprocess->working_file}}</label>
              {!! $errors->first('working_file', '<p class="error-message">:message</p>') !!}
           </div>
         </div>
@@ -213,7 +222,16 @@
     $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
     //Money Euro
     $('[data-mask]').inputmask()
+ /* $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
 
+    })*/
   </script>
  
 

@@ -50,6 +50,21 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SOP
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="{{route('sop.create')}}" style="font-size: 14px" onMouseOver="this.style.color='#E9408B'"
+                          onMouseOut="this.style.color='#212529'">Upload SOP</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{{route('sop.index')}}" style="font-size: 14px" onMouseOver="this.style.color='#E9408B'"
+                          onMouseOut="this.style.color='#212529'">List of SOP</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown Datas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

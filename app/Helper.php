@@ -11,7 +11,7 @@ use mikehaertl\pdftk\Pdf1;
 
 class Helper
 {
-    public static function foo($pdfpath=null,$journalName=null)
+    public static function foo($pdfpath,$journalName,$outpath)
     {
 
         $pdf = new Pdf1($pdfpath, [
@@ -47,7 +47,7 @@ class Helper
 
               $imageNames[$count-1]=time().'-'.$journalName.'-'.$count.'.jpg';
 
-	         $pdfimg->saveImage(public_path('/journal-docs/fileimages/'.$imageNames[$count-1]));
+	         $pdfimg->saveImage(public_path($outpath.$imageNames[$count-1]));
             
 	        }
 	       
