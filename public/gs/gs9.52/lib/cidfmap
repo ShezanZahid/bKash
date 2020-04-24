@@ -1,0 +1,40 @@
+%!
+% cidfmap generated automatically by mkcidfm.ps from fonts found in
+%   C:/WINDOWS/Fonts
+
+% Substitutions
+/MalgunGothicRegular << /SubfontID 0 /Path (C:/WINDOWS/Fonts/malgun.ttf) /FileType /TrueType /CSI [(Korea1) 3] >> ;
+/MS-UI-Gothic << /SubfontID 2 /Path (C:/WINDOWS/Fonts/msgothic.ttc) /FileType /TrueType /CSI [(Japan1) 3] >> ;
+/ArialUnicodeMS-GB << /SubfontID 0 /Path (C:/WINDOWS/Fonts/arialuni.ttf) /FileType /TrueType /CSI [(GB1) 2] >> ;
+/MS-Gothic << /SubfontID 0 /Path (C:/WINDOWS/Fonts/msgothic.ttc) /FileType /TrueType /CSI [(Japan1) 3] >> ;
+/ArialUnicodeMS-KR << /SubfontID 0 /Path (C:/WINDOWS/Fonts/arialuni.ttf) /FileType /TrueType /CSI [(Korea1) 3] >> ;
+/MS-PGothic << /SubfontID 1 /Path (C:/WINDOWS/Fonts/msgothic.ttc) /FileType /TrueType /CSI [(Japan1) 3] >> ;
+/NSimSun << /SubfontID 1 /Path (C:/WINDOWS/Fonts/simsun.ttc) /FileType /TrueType /CSI [(GB1) 2] >> ;
+/ArialUnicodeMS-CNS << /SubfontID 0 /Path (C:/WINDOWS/Fonts/arialuni.ttf) /FileType /TrueType /CSI [(CNS1) 2] >> ;
+/SimSun << /SubfontID 0 /Path (C:/WINDOWS/Fonts/simsun.ttc) /FileType /TrueType /CSI [(GB1) 2] >> ;
+/ArialUnicodeMS-JP << /SubfontID 0 /Path (C:/WINDOWS/Fonts/arialuni.ttf) /FileType /TrueType /CSI [(Japan1) 3] >> ;
+/MS-Mincho-oldttf << /SubfontID 0 /Path (C:/WINDOWS/Fonts/msmincho.ttf) /FileType /TrueType /CSI [(Japan1) 3] >> ;
+/MalgunGothicBold << /SubfontID 0 /Path (C:/WINDOWS/Fonts/malgunbd.ttf) /FileType /TrueType /CSI [(Korea1) 3] >> ;
+
+% Aliases
+/AdobeMingStd-Light /ArialUnicodeMS-CNS ;
+/HYGoThic-Medium /ArialUnicodeMS-KR ;
+/KozMinPr6N-Regular /ArialUnicodeMS-JP ;
+/Ryumin-Medium /ArialUnicodeMS-JP ;
+/MKai-Medium /ArialUnicodeMS-CNS ;
+/HeiseiKakuGo-W5 /MS-Gothic ;
+/AdobeHeitiStd-Regular /ArialUnicodeMS-GB ;
+/STHeiti-Regular /ArialUnicodeMS-GB ;
+/STSong-Light /SimSun ;
+/STKaiti-Regular /ArialUnicodeMS-GB ;
+/STFangsong-Light /SimSun ;
+/MSung-Medium /ArialUnicodeMS-CNS ;
+/AdobeMyungjoStd-Medium /ArialUnicodeMS-KR ;
+/HYSMyeongJo-Medium /ArialUnicodeMS-KR ;
+/HeiseiMin-W3 /ArialUnicodeMS-JP ;
+/Ryumin-Light /ArialUnicodeMS-JP ;
+/GothicBBB-Medium /MS-Gothic ;
+/MHei-Medium /ArialUnicodeMS-CNS ;
+/HYRGoThic-Medium /ArialUnicodeMS-KR ;
+/AdobeSongStd-Light /SimSun ;
+/MSung-Light /ArialUnicodeMS-CNS ;

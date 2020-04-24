@@ -1,0 +1,78 @@
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #e2136e !important;
+}
+.nav-pills .nav-link:not(.active):hover{
+    background-color: #e2136e !important;
+    color: white;
+}
+.brand-image{
+    max-height: unset !important;
+}
+a{
+    color: #e2136e;
+}
+.bg-primary{
+    background-color: #e2136e !important;
+}
+.btn-primary{
+    background-color: #e2136e !important;
+    border-color: #e2136e !important;
+}
+.btn-outline-primary{
+    color: #e2136e !important;
+    border-color: #e2136e !important;
+}
+.btn-outline-primary:hover{
+    background-color: #e2136e !important;
+    color: white !important;
+}
+.btn{
+    border-radius: unset !important;
+}
+.nav-treeview{
+    margin-left: 1.5em;
+}
+
+
+
+.select2-selection__choice {
+  background-color: #e2136e !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+     background-color: #e2136e !important;
+     color: white !important; 
+}
+
+
+
+input.parsley-error
+    {
+      color: #B94A48 !important;
+      background-color: #F2DEDE !important;
+      border: 1px solid #EED3D7 !important;
+    }
+
+.error-message {
+  color: #cc0033;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 15px;
+  margin: 5px 0 0;
+}
+
+
+
+img.mfp-img {
+min-width: 100vw !important
+min-height: 100vh !important`;
+}
+div.avia-popup .mfp-close {
+  top:50px!important;
+  right:30px!important;
+}
+
+
+.progress { position:relative; width:100%; border: 1px solid #7F98B2; padding: 1px; border-radius: 3px; }
+.bar { background-color: #B4F5B4; width:0%; height:25px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:3px; left:48%; color: #7F98B2;}
